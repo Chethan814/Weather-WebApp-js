@@ -19,6 +19,15 @@ In this project, I learned to:
 ## Getting Started
 To get started with this project, clone the repository and install the necessary dependencies.
 
+
+
 ```bash
 git clone <your-repo-url>
 cd weathering-app
+
+```
+
+![hello](./public/preview.jpg)
+
+
+

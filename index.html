@@ -12,14 +12,14 @@
         <div class="weather-gradient"></div>
         <div class="date-container">
           <h2 class="date-dayname" id="day">Tuesday</h2>
-          <span class="date-day">15 Jan 2019</span>
+          <span class="date-day" id="date">15 Jan 2019</span>
           <i class="location-icon" data-feather="map-pin"></i>
-          <span class="location" id="location">Paris, FR</span>
+          <span class="location" id="location"> <span id="city">Paris</span>, <span id="country">FR</span></span>
         </div>
         <div class="weather-container">
-          <i class="weather-icon" data-feather="sun"></i>
-          <h1 class="weather-temp">29°C</h1>
-          <h3 class="weather-desc">Sunny</h3>
+          <i class="weather-icon" data-feather="sun" id="weatherIcon"></i>
+          <h1 class="weather-temp" id="temperature">29°C</h1>
+          <h3 class="weather-desc" id="weatherDesc">Sunny</h3>
         </div>
       </div>
       <div class="info-side">
@@ -27,17 +27,17 @@
           <div class="today-info">
             <div class="precipitation">
               <span class="title">PRECIPITATION</span>
-              <span class="value">0 %</span>
+              <span class="value"> <span id="precipitationValue">0</span> %</span>
               <div class="clear"></div>
             </div>
             <div class="humidity">
               <span class="title">HUMIDITY</span>
-              <span class="value">34 %</span>
+              <span class="value" ><span id="humidityValue">34</span> %</span>
               <div class="clear"></div>
             </div>
             <div class="wind">
               <span class="title">WIND</span>
-              <span class="value">0 km/h</span>
+              <span class="value"><span id="windValue">0</span> km/h</span>
               <div class="clear"></div>
             </div>
           </div>

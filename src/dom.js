@@ -8,6 +8,7 @@ export let DOMElements = {
     temperature: document.querySelector("#temperature"),
     weatherIcon: document.querySelector("#weatherIcon"),
     weatherDesc: document.querySelector("#weatherDesc"),
+
     precipitationValue: document.querySelector("#precipitationValue"),
     humidityValue: document.querySelector("#humidityValue"),
     windValue: document.querySelector("#windValue"),

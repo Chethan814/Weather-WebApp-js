@@ -7,7 +7,7 @@ const main = async () => {
         const data = await fatchApi();
         if (data) {
             const processedData = ProcessData(data)
-            console.log(processedData);
+            // console.log(processedData);
         }
     }
     catch(error){

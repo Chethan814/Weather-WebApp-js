@@ -1,5 +1,5 @@
 const apiKey = "c427752efc504d1fb23141033241212";
-// let URL = "http://api.weatherapi.com/v1/current.json";
+let URL = "http://api.weatherapi.com/v1/current.json";
 let location = "bangalore";
 
 function finalUrl(apiKey, url, loc) {

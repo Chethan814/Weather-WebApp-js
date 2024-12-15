@@ -1,11 +1,94 @@
-import { locations } from "./dom"
+import { DOMElements } from "./dom";
+
+// ? Main Export function
+
 export const ProcessData = (data) => {
-    let currentloc = currentLocations(data)
-    locations.innerHTML = currentloc
-}
+  currentLocations(data, DOMElements);
+  currentDate(data, DOMElements);
+  temperature(data, DOMElements);
+  moreDetail(data, DOMElements);
+};
 
-function currentLocations(data){
-    let {location : {name, region}} = data
-    return name
+// This is location update function
 
-}
+let currentLocations = (data, DOM) => {
+  let {
+    location: { name, region, country },
+  } = data;
+  DOM.city.innerHTML = name;
+  DOM.country.innerHTML = String(country).substring(0, 2).toUpperCase();
+};
+
+// This is Date and Day update function
+
+let currentDate = (data, Dom) => {
+  let {
+    location: { localtime },
+  } = data;
+  let time = new Date(localtime);
+  // console.log(time.getDay());
+
+  Dom.date.innerHTML = formatDate(time);
+  Dom.day.innerHTML = formatDay(time);
+};
+
+const formatDate = (date) => {
+  let monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = monthNames[date.getMonth()];
+  let day = date.getDate();
+  let year = date.getFullYear();
+  // console.log(`${day} ${month} ${year}`);
+  return `${day} ${month} ${year}`;
+};
+
+const formatDay = (date) => {
+  let dayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thuesday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = dayNames[date.getDay()];
+  return `${day}`;
+};
+
+// This is temperature and description update function
+
+let temperature = (data, dom) => {
+  let {
+    current: {
+      temp_c,
+      condition: { text, icon },
+    },
+  } = data;
+  console.log(temp_c, icon, text);
+
+  dom.temperature.innerHTML = temp_c;
+  dom.weatherDesc.innerHTML = text;
+};
+
+// This is PRECIPITATION , HUMIDITY and WIND update
+
+let moreDetail = (data, dom) => {
+    let {current :{ precip_in, wind_kph , humidity} } = data
+
+    dom.precipitationValue.innerHTML = precip_in
+    dom.humidityValue.innerHTML = humidity
+    dom.windValue.innerHTML = wind_kph
+};

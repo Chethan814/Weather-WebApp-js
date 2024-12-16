@@ -12,6 +12,11 @@ export let DOMElements = {
     precipitationValue: document.querySelector("#precipitationValue"),
     humidityValue: document.querySelector("#humidityValue"),
     windValue: document.querySelector("#windValue"),
+
+    day1: document.querySelector('#Day1'),
+    day2: document.querySelector('#Day2'),
+    day3: document.querySelector('#Day3'),
+    day4: document.querySelector('#Day4')
 }
 
 

@@ -30,6 +30,10 @@ let currentDate = (data, Dom) => {
 
   Dom.date.innerHTML = formatDate(time);
   Dom.day.innerHTML = formatDay(time);
+  Dom.day1.innerHTML = String(formatDay(time,1)).substring(0,3)
+  Dom.day2.innerHTML = String(formatDay(time,2)).substring(0,3)
+  Dom.day3.innerHTML = String(formatDay(time,3)).substring(0,3)
+  Dom.day4.innerHTML = String(formatDay(time,4)).substring(0,3)
 };
 
 const formatDate = (date) => {
@@ -54,7 +58,7 @@ const formatDate = (date) => {
   return `${day} ${month} ${year}`;
 };
 
-const formatDay = (date) => {
+const formatDay = (date , nextday = 0 ) => {
   let dayNames = [
     "Sunday",
     "Monday",
@@ -64,8 +68,8 @@ const formatDay = (date) => {
     "Friday",
     "Saturday",
   ];
-  let day = dayNames[date.getDay()];
-  return `${day}`;
+  let day = dayNames[date.getDay() + nextday];
+  return day;
 };
 
 // This is temperature and description update function
@@ -86,9 +90,11 @@ let temperature = (data, dom) => {
 // This is PRECIPITATION , HUMIDITY and WIND update
 
 let moreDetail = (data, dom) => {
-    let {current :{ precip_in, wind_kph , humidity} } = data
+  let {
+    current: { precip_in, wind_kph, humidity },
+  } = data;
 
-    dom.precipitationValue.innerHTML = precip_in
-    dom.humidityValue.innerHTML = humidity
-    dom.windValue.innerHTML = wind_kph
+  dom.precipitationValue.innerHTML = precip_in;
+  dom.humidityValue.innerHTML = humidity;
+  dom.windValue.innerHTML = wind_kph;
 };

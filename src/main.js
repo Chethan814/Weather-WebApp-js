@@ -1,4 +1,5 @@
 import "../style.css";
+import "./dom"
 import { ProcessData } from "./utils";
 import { fatchApi } from "./api";
 

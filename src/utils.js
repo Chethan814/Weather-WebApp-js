@@ -30,6 +30,7 @@ let currentDate = (data, Dom) => {
 
   Dom.date.innerHTML = formatDate(time);
   Dom.day.innerHTML = formatDay(time);
+
   Dom.day1.innerHTML = String(formatDay(time,1)).substring(0,3)
   Dom.day2.innerHTML = String(formatDay(time,2)).substring(0,3)
   Dom.day3.innerHTML = String(formatDay(time,3)).substring(0,3)
@@ -98,3 +99,4 @@ let moreDetail = (data, dom) => {
   dom.humidityValue.innerHTML = humidity;
   dom.windValue.innerHTML = wind_kph;
 };
+
